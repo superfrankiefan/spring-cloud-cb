@@ -1,0 +1,8 @@
+tracer.property: "I AM THE DEFAULT"
+spring.jpa.hibernate.ddl-auto: create
+spring.jpa.show-sql: "true"
+spring.datasource.type: "mysql"
+spring.datasource.url: jdbc:mysql://localhost:3306/db_example
+spring.datasource.username: frankie
+spring.datasource.password: password
+server.port: 8080
