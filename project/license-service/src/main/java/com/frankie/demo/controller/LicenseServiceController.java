@@ -2,6 +2,9 @@ package com.frankie.demo.controller;
 
 import com.frankie.demo.model.License;
 import com.frankie.demo.service.LicenseService;
+import com.frankie.demo.utils.UserContextHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,12 +14,13 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "v1/organizations/{organizationId}/licenses")
 public class LicenseServiceController {
+    private static final Logger logger = LoggerFactory.getLogger(LicenseServiceController.class);
     @Autowired
     private LicenseService licenseService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<License> getLicenses(@PathVariable("organizationId") Long organizationId) {
-
+        logger.info("LicenseServiceController Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
         return licenseService.getLicensesByOrg(organizationId);
     }
 

@@ -13,5 +13,7 @@
         <module>eurekasvr</module>
         <module>license-service</module>
         <module>organization-service</module>
+        <module>zuulsvr</module>
+        <module>specialroutes-service</module>
     </modules>
 </project>
